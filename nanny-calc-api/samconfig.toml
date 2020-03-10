@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "nanny-notifier-calc-svc"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-y12moze0pdt1"
+s3_prefix = "nanny-notifier-calc-svc"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+

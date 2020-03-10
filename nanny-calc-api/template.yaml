@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SAM Template for Nanny Notifier's Calculator Service
+  
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  BillFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: bill/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      
+
+Outputs:
+  BillFunction:
+    Description: "Bill Lambda Function ARN"
+    Value: !GetAtt BillFunction.Arn
+  BillFunctionIamRole:
+    Description: "Implicit IAM Role created for Bill function"
+    Value: !GetAtt BillFunctionRole.Arn
